@@ -5,16 +5,18 @@ use std::path::PathBuf;
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
 pub(crate) struct Cli {
-    // /// Set the Schema store to operate on; defaults to the current directory
-    // #[arg(short, long)]
-    // store: Option<PathBuf>,
+	// /// Set the Schema store to operate on; defaults to the current directory
+	// #[arg(short, long)]
+	// store: Option<PathBuf>,
 
-    /// Turn debugging information on
-    #[arg(short, long, action = clap::ArgAction::Count)]
-    debug: u8,
-    
-    #[command(subcommand)]
-    commands: Option<Commands>,
+	// --verbosity=N -v -vv -vvv
+	// --quiet --silent -q -qq -qqq
+	/// Turn debugging information on
+	#[arg(short, long, action = clap::ArgAction::Count)]
+	debug: u8,
+	
+	#[command(subcommand)]
+	commands: Option<Commands>,
 }
 
 
@@ -24,12 +26,12 @@ pub(crate) struct Cli {
 
 #[derive(Subcommand, Debug)]
 enum Commands {
-    
-    /// Add files to the Schema store
-    Add {
+	
+	/// Add files to the Schema store
+	Add {
 
-        /// The files to add to the Schema store
-        files: Vec<PathBuf>,
-    }
+		/// The files to add to the Schema store
+		files: Vec<PathBuf>,
+	}
 }
 

@@ -1,8 +1,9 @@
 [package]
-name = "schema"
-version = "0.1.0"
+name = "schema1"
+version = "1.1.0"
 edition = "2021"
 
 [dependencies]
 clap = { version = "4.5.30", features = ["derive"] }
-uuid = { version = "1.13.2", features = ["v5"] }
+serde = { version = "1.0.218", features = ["serde_derive"] }
+uuid = { version = "1.13.2", features = ["serde", "v5"] }

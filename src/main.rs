@@ -1,11 +1,19 @@
-use uuid::Uuid;
 use clap::Parser;
-//use uuid::{uuid, Uuid};
-//use serde::{Serialize, Deserialize};
 
 mod cli;
+mod debug;
+
+mod record;
+mod id; mod ns;
+
+mod store;
+
+// use serde::{Serialize, Deserialize};
 
 fn main() {
+	use record::*;
+	use artist::*;
+
 	println!("Hello, world!");
 	let cli = cli::Cli::parse();
 
@@ -13,36 +21,7 @@ fn main() {
 	// 	println!("Hello {}!", args.name);
 	// }
 	println!("{:?}", cli);
+
+	let pink_floyd = Artist::from("Pink Floyd");
+	let record = Record::from(pink_floyd);
 }
-
-
-struct Record {
-    uuid: Uuid,
-    content: RecordType,
-}
-
-enum RecordType {
-    Artist(Artist),
-    Track(Track),
-    Album(Album),
-}
-
-struct Artist {
-	name: String,
-}
-
-struct Track {
-	artist: Artist,
-	name: String,
-}
-
-struct Album {
-	tracks: Vec<Track>,
-}
-
-impl Artist {
-	fn from(name: String) -> Artist {
-    Artist { name }
-	}
-}
-
