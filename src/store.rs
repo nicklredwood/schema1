@@ -8,19 +8,19 @@
 struct Store;
 
 trait Realize {
-    fn realize(&self);
+	fn realize(&self);
 }
 
 impl Realize for Store {
-    fn realize(&self) {
-        todo!()
-    }
+	fn realize(&self) {
+		todo!()
+	}
 }
 
 impl Drop for Store {
-    fn drop(&mut self) {
-        Store::realize(&self);
-    }
+	fn drop(&mut self) {
+		Store.realize();
+	}
 }
 
 // use std::fs::File;

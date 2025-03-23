@@ -1,0 +1,11 @@
+[package]
+name = "schema"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+derive = { version = "0.1.0", path = "derive" }
+proc-macro2 = "1.0.94"
+quote = "1.0.39"
+syn = "2.0.99"
+uuid = { version = "1.15.1", features = ["serde", "v5"] }

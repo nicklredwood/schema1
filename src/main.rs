@@ -1,11 +1,12 @@
 use clap::Parser;
 
+// #[macro_use]
+// extern crate schema;
+
 mod cli;
 mod debug;
 
 mod record;
-mod id; mod ns;
-
 mod store;
 
 // use serde::{Serialize, Deserialize};

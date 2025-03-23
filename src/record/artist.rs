@@ -2,7 +2,7 @@ use serde::{Serialize, Deserialize};
 use uuid::Uuid;
 
 use super::Record;
-use crate::{id::UuidEncode, ns::Namespace};
+use schema::{Namespace, UuidEncode};
 
 // TODO: write a type-derive macro. Something like:
 // #[namespace(Record)]
